@@ -1,0 +1,13 @@
+import { Router } from "express";
+import * as auhtors from "./author.controller.js";
+import { auth } from "../../middlewares/authen.middleware.js";
+const router = Router();
+router.post("/signUp", auhtors.signUp);
+router.post("/login",auhtors.signIn);
+router.get("/getAll", auhtors.getAllAuthors);
+router.get("/getAnAuthor/:id", auhtors.getAnAuthor);
+router.patch("/updateAuthor",auth(), auhtors.updateAuthor);
+router.delete("/deleteAuthor", auth(), auhtors.deleteAuthor);
+router.get("/search",auhtors.search);
+router.get("/confirmation/:confirmationToken",auhtors.verifyEmail);
+export default router;
