@@ -100,16 +100,7 @@ export const getAnAuthor = async (req, res, next) => {
 export const updateAuthor = async (req, res, next) => {
   const { email } = req.body;
   const { _id } = req.authenAuthor;
-  const isNewAuthorExists = await Author.findOne({ email });
-  if (!isNewAuthorExists) {
-    return next(
-      new ErrorClass(
-        "this email does not exist",
-        400,
-        "this email does not exist"
-      )
-    );
-  }
+
   const author = await Author.findById(_id);
   author.books.forEach(async (element) => {
     try {
