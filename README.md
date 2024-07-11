@@ -15,7 +15,7 @@ Welcome to the Book and Author Management Application README! This application a
     - author (String, required)
     - publishedDate (Date, default to the current date)
   - **Author Model**:
-    - name (String, required)
+    - name (String, required, unique)
     - bio (String)
     - birthDate (Date)
     - books (Array of ObjectIds referencing Book model)
