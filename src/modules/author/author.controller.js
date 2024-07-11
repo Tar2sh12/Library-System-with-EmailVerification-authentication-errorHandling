@@ -3,7 +3,6 @@ import Author from "./../../../DB/models/Author.model.js";
 import Book from "./../../../DB/models/Book.model.js";
 import jwt from "jsonwebtoken";
 import { sendEmailService } from "../../services/send-email.services.js";
-import { ErrorClass } from "../../utils/error-class.utils.js";
 export const signUp = async (req, res, next) => {
   const { email, bio, bdate, password } = req.body;
   const isEmailExist = await Author.findOne({ email });

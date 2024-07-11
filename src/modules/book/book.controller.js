@@ -1,6 +1,6 @@
 import Book from "./../../../DB/models/Book.model.js";
 import Author from "./../../../DB/models/Author.model.js";
-
+import { ErrorClass } from "../../utils/error-class.utils.js";
 export const addBook = async (req, res, next) => {
     const { title, content, author, publishedDate } = req.body;
     const users = await Author.find().countDocuments();
@@ -98,6 +98,15 @@ export const getAllBooks = async (req, res, next) => {
 export const getABook = async (req, res, next) => {
     const { id } = req.params;
     const book = await Book.findById(id);
+    if(!book){
+      return next(
+        new ErrorClass(
+          "Not Found",
+          404,
+          "Book not found."
+        )
+      );
+    }
     res.json(book);
 
 };
