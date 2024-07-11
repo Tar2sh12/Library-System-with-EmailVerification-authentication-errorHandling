@@ -32,6 +32,9 @@ export const auth = () => {
       if (!author) {
         return res.status(404).json("please signUp and try to login ");
       }
+      if(!author?.isConfirmed){
+        return res.status(400).json("please go to your email and verify your account ");
+      }
       req.authenAuthor = author;
       next(); // the parameters next recieves is errors only
     } catch (error) {
