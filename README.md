@@ -59,7 +59,7 @@ Welcome to the Book and Author Management Application README! This application a
 
 4. Start the application:
    ```bash
-   npm start
+   npm run start:dev 
    ```
 
 5. The application will start at `http://localhost:3004` by default.
