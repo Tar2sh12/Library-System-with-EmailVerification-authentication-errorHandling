@@ -45,8 +45,8 @@ Welcome to the Book and Author Management Application README! This application a
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
-   cd <repository-name>
+   git clone <[repository-url](https://github.com/Tar2sh12/Library-System-with-EmailVerification-authentication-errorHandling)>
+   cd <Library-System-with-EmailVerification-authentication-errorHandling>
    ```
 
 2. Install dependencies:
